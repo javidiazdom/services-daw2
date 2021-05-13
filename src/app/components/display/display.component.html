@@ -1,0 +1,29 @@
+<div class = "main">
+    <div class ="main-align">
+      <div class="content">
+        <div class = "upper-container">
+          <div class ="title">
+            <h1>Hash app</h1>
+            <mat-icon (click)="openInfoPanel()">info</mat-icon>
+          </div>
+          <mat-form-field appearance="fill">
+            <mat-label>Algorithms</mat-label>
+            <mat-select [(ngModel)]="selectedAlgorithm" name="algorithm" (selectionChange)="updateHash()">
+              <mat-option *ngFor="let algorithm of algorithms" [value]="algorithm">
+                {{algorithm}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class = "display">
+          <mat-form-field >
+            <mat-label>Introduce un texto</mat-label>
+            <input matInput placeholder="Ex. El ritmo aguanta algún cerebro" [(ngModel)]="text" (input)="updateHash()">
+          </mat-form-field>
+          <div class ="text">
+            {{hash}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
